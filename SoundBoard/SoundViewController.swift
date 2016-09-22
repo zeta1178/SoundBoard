@@ -16,14 +16,21 @@ class SoundViewController: UIViewController {
     
     @IBOutlet weak var recordButton: UIButton!
     
-    var audioRecorder: AVAudioRecorder? = nil
+    @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var playButton: UIButton!
+    
+    var audioRecorder: AVAudioRecorder? = nil
+    var audioPlayer: AVAudioPlayer? = nil
+    var audioURL : URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupRecorder()
         
+            playButton.isEnabled = false
+            addButton.isEnabled = false
         
     }
     
@@ -40,10 +47,7 @@ class SoundViewController: UIViewController {
             
             let basePath: String  = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             let pathComponents = [basePath, "audio.m4a"]
-            let audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
-            print("#######################")
-            print(audioURL)
-            print("#######################")
+            audioURL = NSURL.fileURL(withPathComponents: pathComponents)!
             
             //Create settings for audio recorder
             
@@ -54,14 +58,12 @@ class SoundViewController: UIViewController {
             
             //Create audioRecorder object
             
-            audioRecorder = try AVAudioRecorder(url: audioURL, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: audioURL!, settings: settings)
             audioRecorder!.prepareToRecord()
         
         } catch let error as NSError {
                 print(error)
         }
-        
-        
         
     }
     
@@ -77,6 +79,8 @@ class SoundViewController: UIViewController {
             //Change button title to record
             
             recordButton.setTitle("Record", for: .normal)
+            playButton.isEnabled = true
+            addButton.isEnabled = true
             
         } else {
             //Start the recording
@@ -89,10 +93,26 @@ class SoundViewController: UIViewController {
     }
     
     @IBAction func playTapped(_ sender: AnyObject) {
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: audioURL!)
+            audioPlayer!.play()
+        } catch {
+        }
     }
     
     
     @IBAction func addTapped(_ sender: AnyObject) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let sound = Sound(context: context)
+        sound.name = nameTextField.text
+        sound.audio = NSData(contentsOf: audioURL!)
+    
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
+        
     }
     
     
