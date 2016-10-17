@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AB1917161D9318EE00C2BD65 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1917151D9318EE00C2BD65 /* SoundViewController.swift */; };
+		AB239F691DB55F500043E810 /* SoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB239F681DB55F500043E810 /* SoundBoard.xcdatamodeld */; };
 		AB7BDFBF1D90DC2C00B41732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFBE1D90DC2C00B41732 /* AppDelegate.swift */; };
 		AB7BDFC11D90DC2C00B41732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFC01D90DC2C00B41732 /* ViewController.swift */; };
 		AB7BDFC41D90DC2C00B41732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7BDFC21D90DC2C00B41732 /* Main.storyboard */; };
-		AB7BDFC71D90DC2C00B41732 /* SoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB7BDFC51D90DC2C00B41732 /* SoundBoard.xcdatamodeld */; };
 		AB7BDFC91D90DC2C00B41732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB7BDFC81D90DC2C00B41732 /* Assets.xcassets */; };
 		AB7BDFCC1D90DC2C00B41732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7BDFCA1D90DC2C00B41732 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -22,7 +22,6 @@
 		AB7BDFBE1D90DC2C00B41732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB7BDFC01D90DC2C00B41732 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB7BDFC31D90DC2C00B41732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB7BDFC61D90DC2C00B41732 /* SoundBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundBoard.xcdatamodel; sourceTree = "<group>"; };
 		AB7BDFC81D90DC2C00B41732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB7BDFCB1D90DC2C00B41732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB7BDFCD1D90DC2C00B41732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		AB7BDFBD1D90DC2C00B41732 /* SoundBoard */ = {
 			isa = PBXGroup;
 			children = (
+				AB239F681DB55F500043E810 /* SoundBoard.xcdatamodeld */,
 				AB7BDFBE1D90DC2C00B41732 /* AppDelegate.swift */,
 				AB7BDFC01D90DC2C00B41732 /* ViewController.swift */,
 				AB1917151D9318EE00C2BD65 /* SoundViewController.swift */,
@@ -65,7 +65,6 @@
 				AB7BDFC81D90DC2C00B41732 /* Assets.xcassets */,
 				AB7BDFCA1D90DC2C00B41732 /* LaunchScreen.storyboard */,
 				AB7BDFCD1D90DC2C00B41732 /* Info.plist */,
-				AB7BDFC51D90DC2C00B41732 /* SoundBoard.xcdatamodeld */,
 			);
 			path = SoundBoard;
 			sourceTree = "<group>";
@@ -143,8 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB239F691DB55F500043E810 /* SoundBoard.xcdatamodeld in Sources */,
 				AB1917161D9318EE00C2BD65 /* SoundViewController.swift in Sources */,
-				AB7BDFC71D90DC2C00B41732 /* SoundBoard.xcdatamodeld in Sources */,
 				AB7BDFC11D90DC2C00B41732 /* ViewController.swift in Sources */,
 				AB7BDFBF1D90DC2C00B41732 /* AppDelegate.swift in Sources */,
 			);
@@ -315,12 +314,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AB7BDFC51D90DC2C00B41732 /* SoundBoard.xcdatamodeld */ = {
+		AB239F681DB55F500043E810 /* SoundBoard.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AB7BDFC61D90DC2C00B41732 /* SoundBoard.xcdatamodel */,
 			);
-			currentVersion = AB7BDFC61D90DC2C00B41732 /* SoundBoard.xcdatamodel */;
 			path = SoundBoard.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
